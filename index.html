@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================================ -->
+  <!-- EDIT #1: Your name in the browser tab                        -->
+  <!-- ============================================================ -->
+  <title>Rohan — Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink: #1a1d24;
+      --muted: #5b6270;
+      --line: #e2e0da;
+      --paper: #fbfaf7;
+      --accent: #2f5d50;
+      --accent-soft: #eef3f0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+
+    /* ---------- Header / nav ---------- */
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 32px 0;
+    }
+    .mark { font-family: "Fraunces", serif; font-size: 20px; font-weight: 600; }
+    nav a {
+      color: var(--muted); text-decoration: none; font-size: 15px;
+      margin-left: 24px; transition: color .2s;
+    }
+    nav a:hover { color: var(--ink); }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 56px 0 72px; }
+    .hero .avail {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; color: var(--accent); background: var(--accent-soft);
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 28px;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .hero h1 {
+      font-family: "Fraunces", serif; font-weight: 400;
+      font-size: clamp(40px, 8vw, 64px); line-height: 1.05;
+      letter-spacing: -0.02em; margin-bottom: 24px;
+    }
+    .hero p { font-size: 19px; color: var(--muted); max-width: 34ch; }
+    .hero .cta {
+      display: inline-block; margin-top: 32px; background: var(--ink);
+      color: var(--paper); text-decoration: none; padding: 13px 26px;
+      border-radius: 8px; font-weight: 500; font-size: 15px; transition: opacity .2s;
+    }
+    .hero .cta:hover { opacity: .85; }
+
+    /* ---------- Sections ---------- */
+    section { padding: 40px 0; border-top: 1px solid var(--line); }
+    .label {
+      font-family: "Fraunces", serif; font-size: 22px; margin-bottom: 24px;
+    }
+
+    /* ---------- Work / projects ---------- */
+    .project {
+      display: block; text-decoration: none; color: inherit;
+      padding: 20px 0; border-bottom: 1px solid var(--line);
+      transition: padding-left .2s;
+    }
+    .project:last-child { border-bottom: none; }
+    .project:hover { padding-left: 8px; }
+    .project h3 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .project p { color: var(--muted); font-size: 15px; }
+    .project .meta { font-size: 13px; color: var(--accent); margin-top: 6px; }
+
+    /* ---------- About ---------- */
+    .about p { color: var(--muted); font-size: 17px; margin-bottom: 16px; }
+
+    /* ---------- Contact / footer ---------- */
+    footer { padding: 48px 0 64px; border-top: 1px solid var(--line); }
+    .links a {
+      color: var(--ink); text-decoration: none; font-size: 16px;
+      margin-right: 24px; border-bottom: 1px solid var(--line); padding-bottom: 2px;
+    }
+    .links a:hover { border-color: var(--ink); }
+    .fine { color: var(--muted); font-size: 13px; margin-top: 32px; }
+
+    @media (max-width: 480px) {
+      nav a { margin-left: 16px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <!-- EDIT #2: Your initials or name -->
+      <span class="mark">R.</span>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- ============================================================ -->
+    <!-- EDIT #3: Hero — your headline and one-line intro             -->
+    <!-- ============================================================ -->
+    <div class="hero">
+      <span class="avail"><span class="dot"></span>Open to new opportunities</span>
+      <h1>Rohan builds customer relationships that last.</h1>
+      <p>Customer relations leader with six years turning users into advocates.</p>
+      <a class="cta" href="#contact">Get in touch</a>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- EDIT #4: Work — duplicate a block to add more projects       -->
+    <!-- ============================================================ -->
+    <section id="work">
+      <div class="label">Selected work</div>
+
+      <a class="project" href="#">
+        <h3>Project or achievement one</h3>
+        <p>A short sentence on what it was and the result you drove.</p>
+        <div class="meta">Role · Year</div>
+      </a>
+
+      <a class="project" href="#">
+        <h3>Project or achievement two</h3>
+        <p>A short sentence on what it was and the result you drove.</p>
+        <div class="meta">Role · Year</div>
+      </a>
+
+      <a class="project" href="#">
+        <h3>Project or achievement three</h3>
+        <p>A short sentence on what it was and the result you drove.</p>
+        <div class="meta">Role · Year</div>
+      </a>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- EDIT #5: About — two or three sentences about you           -->
+    <!-- ============================================================ -->
+    <section id="about" class="about">
+      <div class="label">About</div>
+      <p>Write a couple of sentences here about who you are and what you do. Keep it warm and specific — what you care about, what you're good at.</p>
+      <p>A second line can cover where you're based, what you're looking for, or a personal note.</p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- EDIT #6: Contact — swap in your real links                  -->
+    <!-- ============================================================ -->
+    <footer id="contact">
+      <div class="label">Let's talk</div>
+      <div class="links">
+        <a href="mailto:you@email.com">Email</a>
+        <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+        <a href="#">Resume</a>
+      </div>
+      <p class="fine">© 2026 Rohan. Built with care.</p>
+    </footer>
+
+  </div>
+</body>
+</html>
