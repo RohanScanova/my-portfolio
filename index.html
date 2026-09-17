@@ -168,6 +168,21 @@ footer img{height:26px;margin-bottom:16px;opacity:.9;}
 footer p{color:var(--muted);font-size:14px;}
 footer a{color:var(--cyan);}
 </style>
+<!-- Scanova Conversion Tracking -->
+<script>
+(function(w,d,s,o,f,js,fjs){
+  w['ScanovaTrackingObject']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
+  js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];
+  js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);
+})(window,document,'script','scanova','https://cdn.scanova.io/ct/js/qcg.min.js');
+
+scanova('init', 'pg6nK52J6odEjMDTiVwYmZ8hvdlxrbgdeIM2puJb4vMePP3NmE9UilC4y8u5Ga6Z', {
+  autoPageview: true,
+  autoClicks: true,
+  autoForms: true,
+  autoScroll: true
+});
+</script>
 </head>
 <body>
 
@@ -367,6 +382,35 @@ function submitLead(){
   if(!name||!email){msg.style.color="#ff6b6b";msg.textContent="Please add your name and email so we can reach you.";return;}
   msg.style.color="#3ddc8a";msg.textContent="Thanks, "+name+"! Our team will be in touch shortly.";
   // To collect real leads, connect this form to your email or CRM (e.g. HubSpot).
+}
+</script>
+<!-- Scanova funnel events -->
+<script>
+// Step 2 — demo CTA click
+document.querySelectorAll('a[href="#demo"]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    scanova('track', 'demo_cta_click', {
+      button_text: btn.textContent.trim(),
+      section: 'hero'
+    });
+  });
+});
+
+// Step 3 — demo form started (fires once, on first field focus)
+let demoFormStarted = false;
+const demoForm = document.querySelector('#demo form') || document.querySelector('#demo');
+if (demoForm) {
+  demoForm.addEventListener('focusin', () => {
+    if (!demoFormStarted) {
+      demoFormStarted = true;
+      scanova('track', 'demo_form_start', { form: 'book_a_demo' });
+    }
+  }, true);
+
+  // Step 4 — demo request submitted
+  demoForm.addEventListener('submit', () => {
+    scanova('track', 'demo_request_submitted', { form: 'book_a_demo' });
+  });
 }
 </script>
 </body>
